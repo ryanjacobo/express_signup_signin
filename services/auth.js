@@ -18,9 +18,9 @@ var authService ={
     },
 
     // For get /user
-    verifyUser: function(tokenx){
+    verifyUser: function(token){
         try {
-            let decoded = jwt.verify(tokenx, 'secretkey');
+            let decoded = jwt.verify(token, 'secretkey');
             return models.User.findByPk(decoded.userid);
         } catch (err){
             console.log(err);
